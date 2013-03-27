@@ -197,4 +197,18 @@ operator << (std::ostream& o, enum std::color c)
 	return o;
 }
 
+static
+std::ostream&
+operator << (std::ostream& o, enum std::effect ef)
+{
+	if (ef == std::effect::none) {
+		o << "\033[0m";
+	}
+	else {
+		o << std::effects(ef);
+	}
+
+	return o;
+}
+
 #endif
