@@ -25,12 +25,12 @@ namespace iocolor
 
 	static
 	bool
-	is_tty (std::ostream& s)
+	is_tty (const std::ostream& s)
 	{
-		if (s == std::cout) {
+		if (s.rdbuf() == std::cout.rdbuf()) {
 			return is_tty(STDOUT_FILENO);
 		}
-		else if (s == std::cerr) {
+		else if (s.rdbuf() == std::cerr.rdbuf()) {
 			return is_tty(STDERR_FILENO);
 		}
 		else {
