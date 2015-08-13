@@ -79,7 +79,7 @@ namespace iocolor
 
 	inline
 	color_definition
-	color (enum color fg, enum color bg = color::none, enum effect ef = effect::none)
+	make_color (enum color fg, enum color bg = color::none, enum effect ef = effect::none)
 	{
 		return { static_cast<short>(fg),
 		         static_cast<short>(bg),
@@ -88,7 +88,7 @@ namespace iocolor
 
 	inline
 	color_definition
-	color (short fg, short bg = -1, uint8_t ef = 0)
+	make_color (short fg, short bg = -1, uint8_t ef = 0)
 	{
 		return { fg, bg, ef };
 	}
@@ -97,42 +97,42 @@ namespace iocolor
 	color_definition
 	foreground (enum color fg)
 	{
-		return color(fg);
+		return make_color(fg);
 	}
 
 	inline
 	color_definition
 	foreground (short fg)
 	{
-		return color(fg);
+		return make_color(fg);
 	}
 
 	inline
 	color_definition
 	background (enum color bg)
 	{
-		return color(color::none, bg);
+		return make_color(color::none, bg);
 	}
 
 	inline
 	color_definition
 	background (short bg)
 	{
-		return color(-1, bg);
+		return make_color(-1, bg);
 	}
 
 	inline
 	color_definition
 	effects (enum effect ef)
 	{
-		return color(color::none, color::none, ef);
+		return make_color(color::none, color::none, ef);
 	}
 
 	inline
 	color_definition
 	effects (uint8_t ef)
 	{
-		return color(-1, -1, ef);
+		return make_color(-1, -1, ef);
 	}
 }
 
