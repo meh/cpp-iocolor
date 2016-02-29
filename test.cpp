@@ -3,10 +3,10 @@
 int
 main (int argc, char* argv[])
 {
-	std::cout << std::color::red << "lol" << std::color::reset << std::endl;
+	std::cout << iocolor::color::red << "lol" << iocolor::color::reset << std::endl;
 	std::cout << "wut" << std::endl;
-	std::cout << std::effects(std::effect::bold | std::effect::underline) << "omg" << std::color::reset << std::endl;
-	std::cout << std::color(92) << "lel" << std::color::reset << std::endl;
+	std::cout << iocolor::effects(iocolor::effect::bold | iocolor::effect::underline) << "omg" << iocolor::color::reset << std::endl;
+	std::cout << iocolor::color(92) << "lel" << iocolor::color::reset << std::endl;
 	std::cout << "her" << std::endl;
 
 	return 0;
